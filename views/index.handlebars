@@ -1,0 +1,56 @@
+
+
+
+<h1 class="text-center mb-3">{{title}}</h1>
+<form style="background-color:rgb(241, 245, 247);"action="/api/members" method="POST" class="mb-4">
+<div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="enter your name...." class="form-control" id="name">
+</div>
+<div class="form-group">
+    <label for="surname">Surname</label>
+    <input type="text" name="surname" id="surname" placeholder="enter your surame..."class="form-control" >
+</div>
+<div class="form-group">
+    <label for="email">email</label>
+    <input type="email" name="email" id="email" placeholder="enter your email..." class="form-control">
+</div>
+<div class="form-group">
+    <label for="Phone">Phone-No</label>
+    <input type="text" name="Phone" id="Phone"placeholder="enter Phone-No...." id="myform"class="form-control ">
+
+</div>
+<div class="form-group">
+    <label for="address">Address</label>
+    <input type="text" name="address" id="address" placeholder="enter your address....."class="form-control">
+</div>
+<div class="form-group">
+    <label for="Key">Key</label>
+    <input type="text" name="key" id="key" placeholder="enter key used later to get your details later. ...." class="form-control">
+</div>
+<input type="submit" value="Add member"  class="btn btn-primary btn-block">
+</form>
+<form  method="POST">
+<div class="form-group">
+    <label for="name">name</label>
+    <input type="text" name="name" id="email" placeholder="enter your name..." class="form-control">
+</div>
+
+<div>
+    <input type="submit" value="GET DETAILS" class="btn btn-primary btn-block " href="/api/members"  onclick = "myfunction()"  >
+    
+
+</div>
+
+
+</form>
+<h4>Members</h4>
+<ul class="list-group">
+    {{#each members}}
+    <li class="list-group-item">{{this.name}}&nbsp;:&nbsp;{{this.surname}}&nbsp;:&nbsp;{{this.email}}&nbsp;:&nbsp;{{this.Phone}}&nbsp;:&nbsp;{{this.address}}&nbsp;:&nbsp;{{this.key}}</li>
+    {{/each}}
+</ul>
+
+<a href="/api/members" class ="btn btn-light mt-4">visit API</a>
+
+    
